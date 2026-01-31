@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+# ⚡ React + Vite + TypeScript Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React template powered by **Vite**, **TypeScript**, and **ESLint**  
+with **absolute imports**, **auto-sorted imports**, and a clean developer experience out of the box.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- ⚡ Vite – fast dev server & build
+- ⚛️ React 18
+- 🧠 TypeScript
+- 📏 ESLint (React + TypeScript)
+- 🔀 Auto import sorting (`simple-import-sort`)
+- 🧭 Absolute imports with `@/`
+- 💾 Project-level VS Code settings
+- 🧼 Consistent & team-friendly code style
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📦 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- Vite
+- TypeScript
+- ESLint
+- eslint-plugin-simple-import-sort
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourname/react-template.git
+cd react-template
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Install dependencies
+```bash
+npm install
 ```
+
+### 3. Start development server
+```bash
+npm run dev
+```
+
+---
+
+## 🗂 Project Structure
+
+```txt
+src/
+├─ components/
+├─ hooks/
+├─ pages/
+├─ styles/
+├─ utils/
+├─ main.tsx
+├─ App.tsx
+```
+
+---
+
+## 🧭 Absolute Imports (`@/`)
+
+This template supports absolute imports pointing to the `src` directory.
+
+### Example
+```ts
+import Button from '@/components/Button';
+import useAuth from '@/hooks/useAuth';
+```
+
+---
+
+## 🔀 Auto Sort Imports (on Save)
+
+Imports are automatically sorted when saving a file.
+
+### Import order
+1. React & external packages  
+2. Absolute imports (`@/`)  
+3. Relative imports (`./`, `../`)
+
+---
+
+## 📏 ESLint
+
+Run ESLint manually:
+```bash
+npx eslint src --fix
+```
+
+---
+
+## 📄 License
+
+MIT License  
+Free to use, modify, and distribute.
